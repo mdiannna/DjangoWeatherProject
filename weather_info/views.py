@@ -1,10 +1,20 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 import requests
+from .models import DailyWeather
+# from django.template import loader
+from django.shortcuts import render
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Here will be useful info about weather")
+    latest_weather_data_lst = DailyWeather.objects.order_by('timestamp')
+    # template = loader.get_template('weather_info/index.html')
+    context = {
+        'latest_weather_data_lst': latest_weather_data_lst
+    }
+
+    return render(request, 'weather_info/index.html', context)
+    # return HttpResponse(template.render(context, request))
     
 
 def current_weather(request):

@@ -1,0 +1,15 @@
+{% if latest_weather_data_lst %}
+    <ul>
+        {% for weather_data in latest_weather_data_lst %}
+            <li> description: {{weather_data.description}}</li>
+            <li> timestamp: {{weather_data.timestamp}}</li>
+            <li> temperature: {{weather_data.temperature}}</li>
+            <li> wind: {{weather_data.wind}}</li>
+            <li> humidity: {{weather_data.humidity}}</li>
+            <li> weather_type: {{weather_data.weather_type}}</li>
+            <hr>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p> No weather data available </p>
+{% endif %}

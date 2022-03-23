@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 # Create your models here.
-class DailyWeatherObject(models.Model):
+class DailyWeather(models.Model):
     description = models.CharField(max_length=200)
     timestamp = models.DateTimeField('timestamp')
     temperature = models.IntegerField()
