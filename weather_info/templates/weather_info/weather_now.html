@@ -1,0 +1,26 @@
+<html> 
+
+<head> <title> Current weather for Munich</title></head>
+
+<body>
+    
+<h1>Current weather data for Munich: </h1>
+{% if weather_data %}
+    <p> json: {{weather_data}}</p>
+     <p> Current weather for Munich: </p>
+    <p>weather: {{weather_data.weather}}</p>
+    <p>main: {{weather_data.main}}</p>
+    <p>visibility: {{weather_data.visibility}}</p>
+    <p>wind: {{weather_data.wind}}</p>
+    <p>clouds: {{weather_data.clouds}}</p>
+    <p>sys: {{weather_data.sys}}</p>
+
+
+{% else %}
+    <p> No weather data</p>
+{% endif %}
+
+
+
+</body>
+</html>
